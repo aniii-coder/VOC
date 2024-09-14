@@ -1,12 +1,14 @@
-choice = int(input(f'1)Celsius to Fahrenhiet\n2)Fahrenheit to Celsius\nEnter what you want to convert (Enter option 1 or 2): ')
-)
-if ( choice == 1 ):
-    celsius = float(input('Enter temperature in Celsius: '))
-    answer = (celsius*(9/5)+32)
-    print(f'{celsius}°C is equal to {answer}°F')
-elif(choice == 2 ):
-    fahrenheit = float(input('Enter temperature in Fahrenheit: '))
-    answer = ((fahrenheit-32)*(5/9))
-    print(f'{fahrenheit}°F is equal to {answer}°C')
+def tempratureConverter(temp, unitToConvert):
+    if unitToConvert == 1:
+        return ((temp * 9/5) + 32)
+    elif unitToConvert == 2:
+        return ((temp - 32) * 5/9)
+    else:
+        return "Invalid unit to convert"
+    
+choice = int(input(f'1)Celsius to Fahrenhiet\n2)Fahrenheit to Celsius\nEnter what you want to convert (Enter option 1 or 2): '))
+if  choice == 1 or choice == 2:
+    temp = float(input('Enter temperature: '))
+    print("Converted Temprature is: ", tempratureConverter(temp, choice))
 else:
-    print('Enter the valid number ')
+    print('Invalid choice')
